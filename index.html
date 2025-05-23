@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <meta charset="UTF-8">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="case.css">
+  <link rel="stylesheet" href="work.css">
+  <link rel="stylesheet" href="about.css">
 </head>
 <body>
   <nav>
@@ -13,11 +18,11 @@
     <a href="#about">About Me</a>
   </nav>
 
-  <section id="home">
+<section id="home">
   <h1>Noah Stevens</h1>
-  </section>
+</section>
 
-  <section id="case">
+<section id="case">
     <!-- change showInfo func to work for future functionality -->
     <button class = "case-btn" onclick="showInfo('Bike Repair')">
         <img src="images/bike_repair.jpg" alt="Bike Repair">
@@ -35,7 +40,7 @@
         <img src="images/analytics.png" alt="Analytics site">
     </button>
     
-  </section>
+</section>
 
 <!-- Modal, WORK IN PROGRESS, EDIT THIS TO ADD DIFFERENT PROJECTS -->
 <div id="modal" class="modal" style="display:none;">
@@ -45,68 +50,54 @@
   </div>
 </div>
 
-<script>
-function showInfo(text) {
-  document.getElementById('modal-text').textContent = text;
-  document.getElementById('modal').style.display = 'block';
-}
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
+<script src="main.js"></script>
 
-// Infinite scroll: append new sections as you reach the bottom
-window.addEventListener('scroll', function() {
-  const scrollY = window.scrollY;
-  const docHeight = document.body.scrollHeight;
-  const winHeight = window.innerHeight;
-  // If near the bottom, append another set of sections
-  if (scrollY + winHeight >= docHeight - 10) {
-    appendSections();
-  }
-});
+<section id="work">
+  <div class="work-btn-row">
+    <button class="work-btn" data-index="0">Research</button>
+    <button class="work-btn" data-index="1">Define</button>
+    <button class="work-btn" data-index="2">Sketch</button>
+    <button class="work-btn" data-index="3">Prototype</button>
+    <button class="work-btn" data-index="4">Test</button>
+    <button class="work-btn" data-index="5">Iterate</button>
+  </div>
 
-function appendSections() {
-  // Clone all main sections except nav and modal
-  const mainSections = document.querySelectorAll('section');
-  mainSections.forEach(section => {
-    const clone = section.cloneNode(true);
-    // Optionally, add a class to indicate it's a clone
-    clone.classList.add('cloned-section');
-    document.body.appendChild(clone);
-  });
-}
-</script>
+  <div class="work-desc">
+    <p>
+      How I Work
+    </p>
+  </div>
 
-  <section id="work">
 
-    <button class = "work-btn">
-        Research
-    </button>
+</section>
 
-    <button class = "work-btn">
-        Define
-    </button>
+  <section id="about">
+    <div class = "resume">
+      <div class = "resume-overlay">RESUME</div>
+      <img src = "images/resume.png" alt = "Resume Preview">
+      
+    </div>
 
-    <button class = "work-btn">
-        Sketch
-    </button>
+    <div class = "title">
+      NOAH STEVENS
+    </div>
 
-    <button class = "work-btn">
-        Prototype
-    </button>
+    <div class = "about-content">
+      I'm a 2nd year Software Engineering student at the University of Ottawa.
+      
+      This portfolio is a project I'll be continuously working on
+      as part of my work load this semester.
 
-    <button class = "work-btn">
-        Test
-    </button>
+      Currently, I'm looking for my next Co-op for Fall 2025.
+    </div>
 
-    <button class = "work-btn">
-        Iterate
-    </button>
-
+    <div class="me"><img src="images/me.jpg" alt="Profile Photo"></div>
+    
+      
 
   </section>
 
-  <section id="about">About Me</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
 
