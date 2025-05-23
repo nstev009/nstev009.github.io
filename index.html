@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#case">Case Studies</a>
+    <a href="#work">How I Work</a>
+    <a href="#about">About Me</a>
+  </nav>
+
+  <section id="home">
+  <h1>Noah Stevens</h1>
+  </section>
+
+  <section id="case">
+    <!-- change showInfo func to work for future functionality -->
+    <button class = "case-btn" onclick="showInfo('Bike Repair')">
+        <img src="images/bike_repair.jpg" alt="Bike Repair">
+    </button>
+    
+    <button class = "case-btn" onclick="showInfo('Small Video Game')">
+        <img src="images/small_game.jpg" alt="Small Video Game">
+    </button>
+    
+    <button class = "case-btn" onclick="showInfo('E Commerce Site')">
+        <img src="images/ecommerce.jpg" alt="E Commerce site">
+    </button>
+    
+    <button class = "case-btn" onclick="showInfo('Analytics site')">
+        <img src="images/analytics.png" alt="Analytics site">
+    </button>
+    
+  </section>
+
+<!-- Modal, WORK IN PROGRESS, EDIT THIS TO ADD DIFFERENT PROJECTS -->
+<div id="modal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<script>
+function showInfo(text) {
+  document.getElementById('modal-text').textContent = text;
+  document.getElementById('modal').style.display = 'block';
+}
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+// Infinite scroll: append new sections as you reach the bottom
+window.addEventListener('scroll', function() {
+  const scrollY = window.scrollY;
+  const docHeight = document.body.scrollHeight;
+  const winHeight = window.innerHeight;
+  // If near the bottom, append another set of sections
+  if (scrollY + winHeight >= docHeight - 10) {
+    appendSections();
+  }
+});
+
+function appendSections() {
+  // Clone all main sections except nav and modal
+  const mainSections = document.querySelectorAll('section');
+  mainSections.forEach(section => {
+    const clone = section.cloneNode(true);
+    // Optionally, add a class to indicate it's a clone
+    clone.classList.add('cloned-section');
+    document.body.appendChild(clone);
+  });
+}
+</script>
+
+  <section id="work">
+
+    <button class = "work-btn">
+        Research
+    </button>
+
+    <button class = "work-btn">
+        Define
+    </button>
+
+    <button class = "work-btn">
+        Sketch
+    </button>
+
+    <button class = "work-btn">
+        Prototype
+    </button>
+
+    <button class = "work-btn">
+        Test
+    </button>
+
+    <button class = "work-btn">
+        Iterate
+    </button>
+
+
+  </section>
+
+  <section id="about">About Me</section>
+</body>
+</html>
+
+
