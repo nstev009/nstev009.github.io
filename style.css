@@ -6,17 +6,19 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  overflow: hidden; /* Prevent double scrollbars */
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
   height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   font-family: 'Roboto Mono', monospace;
   overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch; /* For iOS */
 }
 
 body::after {
@@ -33,6 +35,9 @@ section {
   align-items: center;
   font-size: 2rem;
   color: #F4F7F5;
+  scroll-snap-stop: always; /* Forces snap to THIS section before continuing */
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Modal styles */

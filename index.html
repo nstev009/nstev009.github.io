@@ -54,12 +54,12 @@
 
 <section id="work">
   <div class="work-btn-row">
-    <button class="work-btn" data-index="0">Research</button>
-    <button class="work-btn" data-index="1">Define</button>
-    <button class="work-btn" data-index="2">Sketch</button>
-    <button class="work-btn" data-index="3">Prototype</button>
-    <button class="work-btn" data-index="4">Test</button>
-    <button class="work-btn" data-index="5">Iterate</button>
+    <button class="work-btn" data-index="0">1. Research</button>
+    <button class="work-btn" data-index="1">2. Define</button>
+    <button class="work-btn" data-index="2">3. Sketch</button>
+    <button class="work-btn" data-index="3">4. Prototype</button>
+    <button class="work-btn" data-index="4">5. Test</button>
+    <button class="work-btn" data-index="5">6. Iterate</button>
   </div>
 
   <div class="work-desc">
@@ -72,17 +72,16 @@
 </section>
 
   <section id="about">
-    <div class = "resume">
-      <div class = "resume-overlay">RESUME</div>
-      <img src = "images/resume.png" alt = "Resume Preview">
-      
+    <div class="resume" id="resume-trigger">
+      <div class="resume-overlay">RESUME</div>
+      <img src="images/resume.png" alt="Resume Preview">
     </div>
 
-    <div class = "title">
+    <div class="title">
       NOAH STEVENS
     </div>
 
-    <div class = "about-content">
+    <div class="about-content">
       I'm a 2nd year Software Engineering student at the University of Ottawa.
       
       This portfolio is a project I'll be continuously working on
@@ -92,7 +91,14 @@
     </div>
 
     <div class="me"><img src="images/me.jpg" alt="Profile Photo"></div>
-    
+
+    <!-- Resume Modal -->
+    <div id="resume-modal-bg">
+      <div id="resume-modal-content">
+        <button id="resume-modal-close" aria-label="Close">&times;</button>
+        <iframe src="images/NoahStevens_Resume.pdf" title="Resume"></iframe>
+      </div>
+    </div>
       
 
   </section>

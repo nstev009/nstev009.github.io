@@ -63,4 +63,27 @@ document.addEventListener('DOMContentLoaded', function() {
       workDesc.textContent = defaultText;
     }
   });
+  
+  // Resume modal logic
+  const resumeTrigger = document.getElementById('resume-trigger');
+  const resumeModalBg = document.getElementById('resume-modal-bg');
+  const resumeModalClose = document.getElementById('resume-modal-close');
+
+  if (resumeTrigger && resumeModalBg && resumeModalClose) {
+    resumeTrigger.addEventListener('click', function() {
+      resumeModalBg.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    });
+    resumeModalClose.addEventListener('click', function() {
+      resumeModalBg.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    // Optional: close modal when clicking outside content
+    resumeModalBg.addEventListener('click', function(e) {
+      if (e.target === resumeModalBg) {
+        resumeModalBg.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 });

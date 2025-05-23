@@ -3,42 +3,50 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  gap: 3vw;
   width: 100vw;
   height: 100vh;
-  margin: auto;
-  align-items: center;
-  justify-items: center;
+  margin: 0 auto;
+  place-items: center;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-
+.me {
+  display: flex;
+  align-self: flex-end;
+  justify-self: center;
+  margin-bottom: 4vh;
 }
 
 .me img {
-  width: 600px;    /* Set to your desired width */
-  height: auto;    /* Maintains aspect ratio */
-  object-fit: cover;  /* Ensures the image covers the area nicely */
+  width: 30vw;    /* Responsive: 30% of viewport width */
+  max-width: 500px;
+  min-width: 180px;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
 }
 
 .title {
-    font-size: 7rem;
+  font-size: 5vw; /* Responsive font size */
+  min-width: 200px;
+  text-align: center;
 }
 
 .resume {
   position: relative;
   cursor: pointer;
-  max-width: 600px;
+  width: 30vw;
+  max-width: 500px;
+  min-width: 180px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s;
-  margin-top: 10px;
-  align-self: start;
+  margin-top: 0;
+  align-self: auto;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 4vh;
 }
 
 .resume img {
@@ -53,7 +61,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  font-size: 2vw;
   font-weight: bold;
   color: white;
   text-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -69,6 +77,80 @@
 }
 
 .about-content {
-    font-size: 1rem;
-    max-width: 700px;
+  font-size: 1.2vw;
+  min-width: 200px;
+  max-width: 28vw;
+  margin: 2vh auto;
+  text-align: center;
+}
+
+/* Resume Modal Overlay */
+#resume-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30,30,30,0.7);
+  z-index: 2000;
+  display: none;
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+}
+
+#resume-modal-bg.active {
+  display: flex;
+}
+
+#resume-modal-content {
+  background: #A2C7E5;
+  border-radius: 5px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 0.1vw 0.1vw 0.1vw 0.1vw;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2vw;
+  overflow-x: auto;
+  position: relative;
+}
+
+#resume-modal-content iframe {
+  width: 100vh;
+  height: 85vh;
+  min-width: 350px;
+  border: none;
+  background: #fff;
+}
+
+#resume-modal-close {
+  position: absolute;
+  top: 1vw;
+  right: 2vw;
+  font-size: 2.5vw;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  #resume-modal-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw 1vw 1vw 1vw;
+  }
+  #resume-modal-content iframe {
+    width: 90vw;
+    height: 50vh;
+    min-width: 200px;
+  }
+  #resume-modal-close {
+    font-size: 5vw;
+    top: 2vw;
+    right: 3vw;
+  }
 }

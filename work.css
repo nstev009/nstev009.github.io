@@ -1,36 +1,41 @@
 #work {
   background: #386150;
   display: flex;
-  flex-direction: column;      /* Arrange buttons in a row */
-  align-items: center;  /* Align to the top */
-  justify-content: flex-start;  /* Center horizontally (optional) */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   height: 100vh;
-  padding-top: 75px;        /* Space from the very top */
-  gap: 20px;                /* Space between buttons */
+  min-height: 600px;
+  padding-top: 6vh;
+  gap: 3vh;
 }
 
 .work-btn-row {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 2vw;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  max-width: 1200px;
 }
 
 .work-btn {
   background: none;
   border: none;
-  padding: 10px 40px;
+  padding: 2vh 4vw;
   cursor: pointer;
   border-radius: 24px;
   outline: none;
   font-family: 'Roboto Mono', monospace;
   color: #F4F7F5;
   position: relative;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 2vw;
+  min-width: 120px;
+  margin-bottom: 2vh;
   z-index: 1;
   overflow: hidden;
-  transition: color 0.3s;
+  transition: color 0.3s, font-size 0.2s, padding 0.2s;
 }
 
 .work-btn::after {
@@ -39,7 +44,7 @@
   left: 50%;
   bottom: 0;
   width: 80%;
-  height: 6px; /* underline thickness */
+  height: 0.7vh;
   background: #A2C7E5;
   border-radius: 8px;
   z-index: -1;
@@ -70,15 +75,42 @@
 }
 
 .work-desc {
-  background: #F4F7F5;         /* Choose your color */
-  color: #222;                 /* Text color for contrast */
-  padding: 24px 40px;
+  background: #F4F7F5;
+  color: #222;
+  padding: 3vh 4vw;
   border-radius: 18px;
-  width: 60%;
-  height: 15%;
-  margin: 40px auto 32px auto; /* 40px from top, 32px below, centered */
+  width: 60vw;
+  min-width: 220px;
+  max-width: 700px;
+  min-height: 60px;
+  margin: 2vh auto 2vh auto;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3vw;
   z-index: 2;
   font-family: 'Roboto Mono', monospace;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+  #work {
+    padding-top: 3vh;
+    min-height: 400px;
+    height: auto;
+  }
+  .work-btn-row {
+    flex-direction: column;
+    gap: 2vh;
+    width: 95vw;
+    max-width: 100vw;
+  }
+  .work-btn {
+    font-size: 4vw;
+    padding: 2vh 2vw;
+    min-width: 100px;
+  }
+  .work-desc {
+    width: 90vw;
+    font-size: 2.5vw;
+    padding: 2vh 2vw;
+  }
 }
