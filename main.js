@@ -1,32 +1,3 @@
-function showInfo(text) {
-  document.getElementById('modal-text').textContent = text;
-  document.getElementById('modal').style.display = 'block';
-}
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-
-// // Infinite scroll: append new sections as you reach the bottom
-// window.addEventListener('scroll', function() {
-//   const scrollY = window.scrollY;
-//   const docHeight = document.body.scrollHeight;
-//   const winHeight = window.innerHeight;
-//   // If near the bottom, append another set of sections
-//   if (scrollY + winHeight >= docHeight - 10) {
-//     appendSections();
-//   }
-// });
-
-// function appendSections() {
-//   // Clone all main sections except nav and modal
-//   const mainSections = document.querySelectorAll('section');
-//   mainSections.forEach(section => {
-//     const clone = section.cloneNode(true);
-//     // Optionally, add a class to indicate it's a clone
-//     clone.classList.add('cloned-section');
-//     document.body.appendChild(clone);
-//   });
-// }
 
 document.addEventListener('DOMContentLoaded', function() {
   const workBtns = document.querySelectorAll('.work-btn');
@@ -86,4 +57,41 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('nav');
+  const homeSection = document.querySelector('#home');
+  const homeNav = document.querySelector('.home-nav');
+  let homeNavOffset = 0;
+  
+  // Function to calculate the home nav's offset from the top
+  function updateOffset() {
+    if (homeNav) {
+      homeNavOffset = homeNav.getBoundingClientRect().top + window.scrollY;
+      console.log('Home nav offset:', homeNavOffset);
+    }
+  }
+  
+  // Initialize the offset
+  updateOffset();
+  
+  window.addEventListener('scroll', function() {
+    // When we scroll past the home section
+    if (window.scrollY > homeSection.offsetHeight - 50) {
+      nav.classList.add('visible');
+    } else {
+      nav.classList.remove('visible');
+    }
+    
+    // Add sticky class to home-nav when scrolled past it
+    if (window.scrollY > homeNavOffset) {
+      homeNav.classList.add('sticky');
+    } else {
+      homeNav.classList.remove('sticky');
+    }
+  });
+  
+  // Update offset when window is resized
+  window.addEventListener('resize', updateOffset);
 });

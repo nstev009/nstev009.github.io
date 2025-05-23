@@ -1,1 +1,116 @@
-#home { background: #386150; }
+#home {
+    background: #386150;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 1vw;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    place-items: center;
+}
+
+.first {
+    font-size: 20rem;
+    align-self: flex-end; /* Push to bottom of its grid area */
+    margin-bottom: -2rem; /* Negative margin to bring closer to nav */
+}
+
+.last {
+    font-size: 20rem;
+    align-self: flex-start; /* Push to top of its grid area */
+    margin-top: -2rem; /* Negative margin to bring closer to nav */
+}
+
+.home-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Control overall nav width */
+    margin: 0 auto; /* Center the nav */
+    transition: all 0.3s ease;
+    flex-wrap: nowrap; /* Prevent wrapping to new line */
+}
+
+/* Sticky nav styling */
+.home-nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #386150;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure the nav maintains its width when sticky */
+.home-nav.sticky {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* Create a container within the sticky nav to maintain button sizes */
+.home-nav.sticky::after {
+    content: '';
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Style your home navigation buttons */
+.home-nav a {
+  padding: 12px 8px; /* Add some horizontal padding */
+  background: #F4F7F5;
+  color: #4C2719;
+  text-decoration: none;
+  transition: all 0.3s;
+  z-index: 999;
+  flex: 1; /* Make buttons grow equally */
+  text-align: center;
+  border-right: 1px solid #386150; /* Divider between buttons */
+  white-space: nowrap; /* Prevent text from wrapping */
+  min-width: 0; /* Allow flex items to shrink below content size */
+  font-size: 1.5rem; /* Consistent font size */
+}
+
+/* Remove border from last button */
+.home-nav a:last-child {
+  border-right: none;
+}
+
+/* First button - rounded left corners only */
+.home-nav a:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+/* Last button - rounded right corners only */
+.home-nav a:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.home-nav a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #e8eae8; /* Slightly darker on hover */
+}
+
+/* Hide the top nav initially */
+nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+/* Show it when scrolled */
+nav.visible {
+  opacity: 1;
+  pointer-events: all;
+}
