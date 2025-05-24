@@ -177,11 +177,11 @@
 }
 
 #nav-modal-bg .modal-content {
-  /* Fix to top center and remove modal look */
+  /* Centered vertically on home */
   position: fixed;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 800px;
   background: transparent;
@@ -189,6 +189,13 @@
   border-radius: 0;
   padding: 0;
   pointer-events: auto;
+}
+
+/* Sticky nav: position at top */
+#nav-modal-bg .modal-content.sticky {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #nav-modal-bg .modal-nav-links {
