@@ -49,7 +49,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #4C2719;
+  color: #4c2719;
   transition: color 0.2s;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .coming-soon-container p {
-  color: #4C2719;
+  color: #4c2719;
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
@@ -123,4 +123,110 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+/* Navigation Modal specific styling */
+.modal-nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.modal-nav-links a {
+  padding: 12px 8px;
+  background: #f4f7f5;
+  color: #4c2719;
+  text-decoration: none;
+  transition: all 0.3s;
+  z-index: 999;
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #386150;
+  white-space: nowrap;
+  min-width: 0;
+  font-size: 1.5rem;
+}
+
+.modal-nav-links a:last-child {
+  border-right: none;
+}
+
+.modal-nav-links a:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.modal-nav-links a:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.modal-nav-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #e8eae8;
+}
+
+/* Navigation modal overrides */
+#nav-modal-bg {
+  /* Transparent overlay, allow interaction behind */
+  background-color: transparent;
+  pointer-events: none;
+}
+
+#nav-modal-bg .modal-content {
+  /* Fix to top center and remove modal look */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  pointer-events: auto;
+}
+
+#nav-modal-bg .modal-nav-links {
+  /* Use original home-nav styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #386150;
+  padding: 10px 0;
+}
+
+#nav-modal-bg .modal-nav-links a {
+  padding: 12px 8px;
+  background: #F4F7F5;
+  color: #4C2719;
+  text-decoration: none;
+  transition: all 0.3s;
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #386150;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+
+#nav-modal-bg .modal-nav-links a:last-child {
+  border-right: none;
+}
+
+#nav-modal-bg .modal-nav-links a:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+#nav-modal-bg .modal-nav-links a:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+#nav-modal-bg .modal-nav-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #e8eae8;
 }
