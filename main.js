@@ -87,39 +87,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const nav = document.querySelector('nav');
-  const homeSection = document.querySelector('#home');
-  const homeNav = document.querySelector('.home-nav');
-  let homeNavOffset = 0;
-  
-  // Function to calculate the home nav's offset from the top
-  function updateOffset() {
-    if (homeNav) {
-      homeNavOffset = homeNav.getBoundingClientRect().top + window.scrollY;
-      console.log('Home nav offset:', homeNavOffset);
-    }
-  }
-  
-  // Initialize the offset
-  updateOffset();
-  
-  window.addEventListener('scroll', function() {
-    // When we scroll past the home section
-    if (window.scrollY > homeSection.offsetHeight - 50) {
-      nav.classList.add('visible');
-    } else {
-      nav.classList.remove('visible');
-    }
-    
-    // Add sticky class to home-nav when scrolled past it
-    if (window.scrollY > homeNavOffset) {
-      homeNav.classList.add('sticky');
-    } else {
-      homeNav.classList.remove('sticky');
-    }
-  });
-  
-  // Update offset when window is resized
-  window.addEventListener('resize', updateOffset);
-});
+// // New nav positioning logic
+// document.addEventListener('DOMContentLoaded', function() {
+//   const homeSection = document.getElementById('home');
+//   const navModalContent = document.getElementById('nav-modal-content');
+
+//   function updateNavPosition() {
+//     // If on any section other than home via hash, or scrolled past home
+//     if ((window.location.hash && window.location.hash !== '#home') || window.scrollY > 0) {
+//       navModalContent.classList.add('sticky');
+//     } else {
+//       navModalContent.classList.remove('sticky');
+//     }
+//   }
+
+//   // Initial update
+//   updateNavPosition();
+//   // Update on scroll and hash change
+//   window.addEventListener('scroll', updateNavPosition);
+//   window.addEventListener('hashchange', updateNavPosition);
+// });

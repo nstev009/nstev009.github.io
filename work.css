@@ -6,7 +6,7 @@
   justify-content: flex-start;
   height: 100vh;
   min-height: 600px;
-  padding-top: 6vh;
+  padding-top: 20vh;
   gap: 3vh;
 }
 
@@ -17,7 +17,6 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 80vw;
-  max-width: 1200px;
 }
 
 .work-btn {
@@ -33,7 +32,7 @@
   font-size: 2vw;
   min-width: 120px;
   margin-bottom: 2vh;
-  z-index: 1;
+  z-index: 999;
   overflow: hidden;
   transition: color 0.3s, font-size 0.2s, padding 0.2s;
 }
