@@ -19,9 +19,9 @@
 
 1. Roboto Mono
 
-#Designs 
+#Designs
 
 1. Bike repair
 2. Small game
 3. E commerce site
-4. An analytics site
+4. An analytics site/

@@ -43,6 +43,8 @@
     background: #386150;
     padding: 10px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%; /* Allow full width when sticky */
 }
 
 /* Ensure the nav maintains its width when sticky */
@@ -59,6 +61,17 @@
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+}
+
+.home-nav.sticky::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #386150;
+    z-index: -1;
 }
 
 /* Style your home navigation buttons */

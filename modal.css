@@ -1,0 +1,126 @@
+/* Modal styling for all modals */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 997;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal-bg.active .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4C2719;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #386150;
+}
+
+/* Coming Soon Modal specific styling */
+.coming-soon-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.coming-soon-container h2 {
+  color: #386150;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.coming-soon-container p {
+  color: #4C2719;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Resume Modal specific styling */
+#resume-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#resume-modal-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#resume-modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#resume-modal-content iframe {
+  width: 100%;
+  height: calc(100% - 20px);
+  border: none;
+}
+
+#resume-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

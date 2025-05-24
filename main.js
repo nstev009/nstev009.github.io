@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   const workBtns = document.querySelectorAll('.work-btn');
   const workDesc = document.querySelector('.work-desc p');
@@ -53,6 +52,35 @@ document.addEventListener('DOMContentLoaded', function() {
     resumeModalBg.addEventListener('click', function(e) {
       if (e.target === resumeModalBg) {
         resumeModalBg.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // Coming Soon modal logic for case study buttons
+  const caseBtns = document.querySelectorAll('.case-btn');
+  const comingSoonModalBg = document.getElementById('coming-soon-modal-bg');
+  const comingSoonModalClose = document.getElementById('coming-soon-modal-close');
+  
+  if (caseBtns.length > 0 && comingSoonModalBg && comingSoonModalClose) {
+    // Add click event to all case buttons
+    caseBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        comingSoonModalBg.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+      });
+    });
+    
+    // Close modal when clicking the close button
+    comingSoonModalClose.addEventListener('click', function() {
+      comingSoonModalBg.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    // Close modal when clicking outside the modal content
+    comingSoonModalBg.addEventListener('click', function(e) {
+      if (e.target === comingSoonModalBg) {
+        comingSoonModalBg.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
