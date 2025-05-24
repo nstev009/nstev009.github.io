@@ -203,8 +203,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #386150;
-  padding: 10px 0;
 }
 
 #nav-modal-bg .modal-nav-links a {
@@ -220,17 +218,7 @@
   font-size: 1.5rem;
 }
 
-#nav-modal-bg .modal-nav-links a:last-child {
-  border-right: none;
-}
 
-#nav-modal-bg .modal-nav-links a:first-child {
-  border-radius: 8px 0 0 8px;
-}
-
-#nav-modal-bg .modal-nav-links a:last-child {
-  border-radius: 0 8px 8px 0;
-}
 
 #nav-modal-bg .modal-nav-links a:hover {
   transform: translateY(-3px);

@@ -3,12 +3,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 2vw;
+  gap: 0.5vw; /* Reduced gap for less vertical space */
   width: 100vw;
   height: 100vh;
   margin: auto;
   align-items: center;
   justify-items: center;
+  padding-top: 7vh; /* Add space at the top for nav bar */
+  padding-bottom: 2vh;
 }
 
 #case img {
@@ -49,8 +51,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     height: auto;
-    gap: 4vw;
-    padding: 4vw 0;
+    gap: 2vw; /* Reduced gap for mobile */
+    padding: 8vw 0 0 0; /* More top padding, less vertical gap */
   }
   #case img {
     width: 80vw;
