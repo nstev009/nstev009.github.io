@@ -3,7 +3,7 @@
 
 1. https://haoran.io/about
 2. https://janelleamores.design/
-3. 
+3. https://tamalsen.dev/
 
 # Colours
 
@@ -24,4 +24,4 @@
 1. Bike repair
 2. Small game
 3. E commerce site
-4. An analytics site/
+4. An analytics site
