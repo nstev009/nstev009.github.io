@@ -89,3 +89,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+const serviceSiteBtn = document.querySelector('.service-site-btn');
+if (serviceSiteBtn) {
+  serviceSiteBtn.addEventListener('click', function() {
+    window.open('https://service-site-pied.vercel.app', '_blank'); 
+  });
+}
