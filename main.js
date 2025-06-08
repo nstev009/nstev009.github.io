@@ -87,23 +87,34 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// // New nav positioning logic
-// document.addEventListener('DOMContentLoaded', function() {
-//   const homeSection = document.getElementById('home');
-//   const navModalContent = document.getElementById('nav-modal-content');
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.modal-nav-links a'); // Adjust selector if needed
 
-//   function updateNavPosition() {
-//     // If on any section other than home via hash, or scrolled past home
-//     if ((window.location.hash && window.location.hash !== '#home') || window.scrollY > 0) {
-//       navModalContent.classList.add('sticky');
-//     } else {
-//       navModalContent.classList.remove('sticky');
-//     }
-//   }
+  // Helper to remove 'active' from all nav links
+  function clearActiveLinks() {
+    navLinks.forEach(link => link.classList.remove('active'));
+  }
 
-//   // Initial update
-//   updateNavPosition();
-//   // Update on scroll and hash change
-//   window.addEventListener('scroll', updateNavPosition);
-//   window.addEventListener('hashchange', updateNavPosition);
-// });
+  // Intersection Observer callback
+  function onIntersect(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Find the nav link that matches this section
+        clearActiveLinks();
+        const id = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`.modal-nav-links a[href="#${id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+        // Optionally, update a tally or indicator elsewhere
+        console.log('Current section:', id);
+      }
+    });
+  }
+
+  // Set up observer
+  const observer = new IntersectionObserver(onIntersect, {
+    threshold: 0.6 // Adjust as needed for when a section is considered "active"
+  });
+
+  sections.forEach(section => observer.observe(section));
+});
