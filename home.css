@@ -9,28 +9,18 @@
     place-items: center;
 }
 
-.first {
-    font-size: 20rem;
-    align-self: flex-end; /* Push to bottom of its grid area */
-    margin-bottom: -2rem; /* Negative margin to bring closer to nav */
+.first, .last {
+  font-size: clamp(4rem, 15vw, 20rem);
+  transition: font-size 0.3s ease;
 }
 
-.last {
-    font-size: 20rem;
-    align-self: flex-start; /* Push to top of its grid area */
-    margin-top: -2rem; /* Negative margin to bring closer to nav */
-}
-
-.home-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* Control overall nav width */
-    margin: 0 auto; /* Center the nav */
-    transition: all 0.3s ease;
-    flex-wrap: nowrap; /* Prevent wrapping to new line */
+.home-nav, #nav-modal-bg .modal-nav-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 /* Sticky nav styling */
@@ -75,19 +65,11 @@
 }
 
 /* Style your home navigation buttons */
-.home-nav a {
-  padding: 12px 8px; /* Add some horizontal padding */
-  background: #F4F7F5;
-  color: #4C2719;
-  text-decoration: none;
-  transition: all 0.3s;
-  z-index: 999;
-  flex: 1; /* Make buttons grow equally */
-  text-align: center;
-  /* border-right: 1px solid #386150;  Remove green divider */
-  white-space: nowrap; /* Prevent text from wrapping */
-  min-width: 0; /* Allow flex items to shrink below content size */
-  font-size: 1.5rem; /* Consistent font size */
+.home-nav a, #nav-modal-bg .modal-nav-links a {
+  padding: 0.75rem 0.5rem;
+  flex: 1 1 auto; /* Allow items to grow and shrink */
+  min-width: 6rem; /* Minimum width for touch targets */
+  font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 .home-nav a:hover {
@@ -111,4 +93,10 @@ nav {
 nav.visible {
   opacity: 1;
   pointer-events: all;
+}
+
+@media (max-width: 600px) {
+  .first, .last {
+    font-size: clamp(3rem, 15vw, 10rem);
+  }
 }

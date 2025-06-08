@@ -57,13 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
   // Coming Soon modal logic for case study buttons
-  const caseBtns = document.querySelectorAll('.case-btn');
+  const caseBtns = document.querySelectorAll('.case-btn:not(.service-site-btn)');
   const comingSoonModalBg = document.getElementById('coming-soon-modal-bg');
   const comingSoonModalClose = document.getElementById('coming-soon-modal-close');
   
   if (caseBtns.length > 0 && comingSoonModalBg && comingSoonModalClose) {
-    // Add click event to all case buttons
+    // Add click event to all case buttons except the first one
     caseBtns.forEach(btn => {
       btn.addEventListener('click', function() {
         comingSoonModalBg.classList.add('active');
@@ -86,24 +89,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
-// // New nav positioning logic
-// document.addEventListener('DOMContentLoaded', function() {
-//   const homeSection = document.getElementById('home');
-//   const navModalContent = document.getElementById('nav-modal-content');
-
-//   function updateNavPosition() {
-//     // If on any section other than home via hash, or scrolled past home
-//     if ((window.location.hash && window.location.hash !== '#home') || window.scrollY > 0) {
-//       navModalContent.classList.add('sticky');
-//     } else {
-//       navModalContent.classList.remove('sticky');
-//     }
-//   }
-
-//   // Initial update
-//   updateNavPosition();
-//   // Update on scroll and hash change
-//   window.addEventListener('scroll', updateNavPosition);
-//   window.addEventListener('hashchange', updateNavPosition);
-// });
