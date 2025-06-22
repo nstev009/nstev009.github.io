@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Coming Soon modal logic for case study buttons
-  const caseBtns = document.querySelectorAll('.case-btn:not(.service-site-btn)');
+  const caseBtns = document.querySelectorAll('.case-btn:not(.service-site-btn):not(.memory-game-btn)');
   const comingSoonModalBg = document.getElementById('coming-soon-modal-bg');
   const comingSoonModalClose = document.getElementById('coming-soon-modal-close');
   
@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
 const serviceSiteBtn = document.querySelector('.service-site-btn');
 if (serviceSiteBtn) {
   serviceSiteBtn.addEventListener('click', function() {
-    window.open('https://service-site-pied.vercel.app', '_blank'); 
+    window.open('https://service-site-pied.vercel.app', '_blank');
+  });
+}
+
+const memoryGameBtn = document.querySelector('.memory-game-btn');
+if (memoryGameBtn) {
+  memoryGameBtn.addEventListener('click', function() {
+    window.open('https://memory-game-9iob.vercel.app', '_blank');
   });
 }
