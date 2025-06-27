@@ -256,12 +256,9 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-  margin-top: 0;
-  align-self: auto;
-  display: flex;
+  margin-top: 3.5vh;
   align-self: flex-start;
-  margin-top: 10vh;
+  justify-self: center;
 }
 
 .resume img {
