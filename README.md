@@ -14,6 +14,10 @@ A modern, responsive portfolio built with React and Vite, showcasing my work as 
 - **Resume Modal**: Integrated PDF viewer for my resume
 - **Modern UI**: Clean, professional design with hover effects and animations
 
+## Access 
+
+To view my portfolio [click here](https://nstev009.github.io/)
+
 ## Color Palette
 
 - Hunter Green: `#386150`
