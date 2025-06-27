@@ -21,6 +21,7 @@ A modern, responsive portfolio built with React and Vite, showcasing my work as 
 - Capput mortuum: `#4C2719`
 - Seasalt: `#F4F7F5`
 - Powder Blue: `#A2C7E5`
+- Desert sand: `#E6CAAE`
 
 ## Typography
 

@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
-import HomeSection from './components/HomeSection'
-import CaseSection from './components/CaseSection'
-import WorkSection from './components/WorkSection'
 import AboutSection from './components/AboutSection'
-import NavigationModal from './components/NavigationModal'
+import CaseSection from './components/CaseSection'
 import ComingSoonModal from './components/ComingSoonModal'
+import HomeSection from './components/HomeSection'
+import NavigationModal from './components/NavigationModal'
+import WorkSection from './components/WorkSection'
 
 function App() {
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
@@ -17,9 +17,9 @@ function App() {
       <WorkSection />
       <AboutSection />
       <NavigationModal />
-      <ComingSoonModal 
-        isOpen={showComingSoonModal} 
-        onClose={() => setShowComingSoonModal(false)} 
+      <ComingSoonModal
+        isOpen={showComingSoonModal}
+        onClose={() => setShowComingSoonModal(false)}
       />
     </>
   )
