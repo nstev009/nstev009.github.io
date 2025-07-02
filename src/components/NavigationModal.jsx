@@ -1,6 +1,5 @@
-import React from 'react'
 
-const NavigationModal = () => {
+const NavigationModal = ({ currentSection }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -8,23 +7,42 @@ const NavigationModal = () => {
     }
   }
 
+  // Determine if navbar should be centered (on home) or at top (other sections)
+  const navPosition = currentSection === 'home' ? 'nav-centered' : 'nav-top'
+
   return (
     <div id="nav-modal-bg" className="modal-bg active">
       <div 
         id="nav-modal-content" 
-        className="modal-content nav-top"
+        className={`modal-content ${navPosition}`}
       >
         <div className="modal-nav-links">
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home') }}>
+          <a 
+            href="#home" 
+            className={currentSection === 'home' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); scrollToSection('home') }}
+          >
             Home
           </a>
-          <a href="#case" onClick={(e) => { e.preventDefault(); scrollToSection('case') }}>
+          <a 
+            href="#case" 
+            className={currentSection === 'case' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); scrollToSection('case') }}
+          >
             Case Studies
           </a>
-          <a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection('work') }}>
+          <a 
+            href="#work" 
+            className={currentSection === 'work' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); scrollToSection('work') }}
+          >
             How I Work
           </a>
-          <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about') }}>
+          <a 
+            href="#about" 
+            className={currentSection === 'about' ? 'active' : ''}
+            onClick={(e) => { e.preventDefault(); scrollToSection('about') }}
+          >
             About Me
           </a>
         </div>

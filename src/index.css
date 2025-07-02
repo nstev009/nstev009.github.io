@@ -38,7 +38,10 @@ section {
   scroll-snap-stop: always;
   width: 100%;
   overflow: hidden;
-  padding-top: 3rem; /* For fixed navigation */
+}
+
+section:not(#home):not(#work) {
+  padding-top: 3rem; /* For fixed navigation, but not on home or work */
 }
 
 .close {
