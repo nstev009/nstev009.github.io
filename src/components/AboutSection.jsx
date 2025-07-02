@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const AboutSection = () => {
   const [showResumeModal, setShowResumeModal] = useState(false)
@@ -45,20 +45,20 @@ const AboutSection = () => {
 
       {/* Resume Modal */}
       {showResumeModal && (
-        <div 
+        <div
           className={`resume-modal-bg ${showResumeModal ? 'active' : ''}`}
           onClick={handleModalBackgroundClick}
         >
           <div className="resume-modal-content">
-            <button 
-              className="resume-modal-close" 
+            <button
+              className="resume-modal-close"
               onClick={handleCloseModal}
               aria-label="Close"
             >
               &times;
             </button>
-            <iframe 
-              src="/images/NoahStevens_Resume.pdf" 
+            <iframe
+              src="/images/NoahStevens_Resume.pdf"
               title="Resume"
             />
           </div>

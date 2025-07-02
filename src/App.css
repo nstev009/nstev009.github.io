@@ -20,8 +20,8 @@
         #DC7F9B 14%,
         #DC7F9B 16%,
         #386150 16%,
-        #386150 97%,
-        #E6CAAE 97%,
+        #386150 95%,
+        #E6CAAE 95%,
         #E6CAAE 97.5%,
         #386150 97.5%
     );
@@ -241,12 +241,11 @@
 
 .title {
   font-size: 5vw;
-  min-width: 10vw;
   text-align: center;
   color: #4C2719;
   background-color: #E6CAAE;
-  padding-right: 4vw;
-  padding-left: 1vw;
+  width: 38vw;
+  padding-right: 0.5vw;
 }
 
 .resume {
