@@ -1,4 +1,3 @@
-import React from 'react'
 
 const CaseSection = ({ onComingSoon }) => {
   const handleServiceSiteClick = () => {
@@ -7,6 +6,10 @@ const CaseSection = ({ onComingSoon }) => {
 
   const handleMemoryGameClick = () => {
     window.open('https://memory-game-9iob.vercel.app', '_blank')
+  }
+
+  const handleECommerceClick = () => {
+    window.open('https://atlaselectronics.vercel.app/', '_blank')
   }
 
   return (
@@ -21,8 +24,9 @@ const CaseSection = ({ onComingSoon }) => {
         <p className="banner">Pattern Pulse. - Small Memory Game</p>
       </button>
       
-      <button className="case-btn" onClick={onComingSoon}>
+      <button className="case-btn" onClick={handleECommerceClick}>
         <img src="/images/ecommerce.jpg" alt="E Commerce site" />
+        <p className="banner">Atlas Electronics - E Commerce site</p>
       </button>
       
       <button className="case-btn" onClick={onComingSoon}>
