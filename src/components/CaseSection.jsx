@@ -12,6 +12,10 @@ const CaseSection = ({ onComingSoon }) => {
     window.open('https://atlaselectronics.vercel.app/', '_blank')
   }
 
+  const handleAnalyticsClick = () => {
+    window.open('https://cite-unseen.vercel.app/', '_blank')
+  }
+
   return (
     <section id="case">
       <button className="case-btn service-site-btn" onClick={handleServiceSiteClick}>
@@ -29,8 +33,9 @@ const CaseSection = ({ onComingSoon }) => {
         <p className="banner">Atlas Electronics - E Commerce site</p>
       </button>
       
-      <button className="case-btn" onClick={onComingSoon}>
+      <button className="case-btn" onClick={handleAnalyticsClick}>
         <img src="/images/analytics.png" alt="Analytics site" />
+        <p className="banner">Cite Unseen - Analytics site</p>
       </button>
     </section>
   )
