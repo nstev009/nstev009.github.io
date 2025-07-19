@@ -395,22 +395,22 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: clamp(400px, 80vw, 800px);
   margin: 0 auto;
   flex-wrap: nowrap;
 }
 
 .modal-nav-links a {
-  padding: 12px 8px;
+  padding: clamp(8px, 1.5vh, 16px) clamp(4px, 1vw, 12px);
   background: #f4f7f5;
   color: #4c2719;
   text-decoration: none;
   transition: all 0.3s;
   flex: 1;
   text-align: center;
-  border-right: 1px solid #386150;
+  border-right: clamp(1px, 0.1vw, 2px) solid #386150;
   white-space: nowrap;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .modal-nav-links a:last-child {
@@ -418,30 +418,30 @@
 }
 
 .modal-nav-links a:first-child {
-  border-radius: 8px 0 0 8px;
+  border-radius: clamp(4px, 1vw, 8px) 0 0 clamp(4px, 1vw, 8px);
 }
 
 .modal-nav-links a:last-child {
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0;
 }
 
 .modal-nav-links a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(clamp(-2px, -0.3vh, -4px));
+  box-shadow: 0 clamp(2px, 0.5vh, 6px) clamp(4px, 1vh, 10px) rgba(0, 0, 0, 0.1);
   background: #e8eae8;
 }
 
 .modal-nav-links a.active {
   background: #A2C7E5;
   color: #f4f7f5;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(clamp(-1px, -0.2vh, -3px));
+  box-shadow: 0 clamp(2px, 0.4vh, 4px) clamp(3px, 0.8vh, 8px) rgba(0, 0, 0, 0.15);
 }
 
 .modal-nav-links a.active:hover {
   background: #4a7562;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(clamp(-2px, -0.3vh, -4px));
+  box-shadow: 0 clamp(2px, 0.5vh, 6px) clamp(4px, 1vh, 10px) rgba(0, 0, 0, 0.2);
 }
 
 #nav-modal-bg {
