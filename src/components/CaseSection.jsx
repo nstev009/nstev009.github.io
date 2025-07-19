@@ -19,17 +19,17 @@ const CaseSection = ({ onComingSoon }) => {
   return (
     <section id="case">
       <button className="case-btn service-site-btn" onClick={handleServiceSiteClick}>
-        <img src="/images/bike_repair.jpg" alt="Bike Repair" />
+        <img src="/images/repair.png" alt="Bike Repair" />
         <p className="banner">shift happens. - Bike Repair Shop</p>
       </button>
       
       <button className="case-btn memory-game-btn" onClick={handleMemoryGameClick}>
-        <img src="/images/small_game.jpg" alt="Small Video Game" />
+        <img src="/images/game.png" alt="Small Video Game" />
         <p className="banner">Pattern Pulse. - Small Memory Game</p>
       </button>
       
       <button className="case-btn" onClick={handleECommerceClick}>
-        <img src="/images/ecommerce.jpg" alt="E Commerce site" />
+        <img src="/images/ecommerce.png" alt="E Commerce site" />
         <p className="banner">Atlas Electronics - E Commerce site</p>
       </button>
       
