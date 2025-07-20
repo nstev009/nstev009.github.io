@@ -8,7 +8,10 @@ const NavigationModal = ({ currentSection }) => {
   }
 
   // Determine if navbar should be centered (on home) or at top (other sections)
-  const navPosition = currentSection === 'home' ? 'nav-centered' : 'nav-top'
+  // const navPosition = currentSection === 'home' ? 'nav-centered' : 'nav-top'
+  
+  // Permanently keep navbar at top for deployment stability
+  const navPosition = 'nav-top'
 
   return (
     <div id="nav-modal-bg" className="modal-bg active">
