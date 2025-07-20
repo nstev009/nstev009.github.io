@@ -40,7 +40,7 @@ const AboutSection = () => {
       </div>
 
       <div className="me">
-        <img src="/images/me.jpg" alt="Profile Photo" />
+        <img src="/images/me_update.jpg" alt="Profile Photo" />
       </div>
 
       {/* Resume Modal */}
