@@ -61,49 +61,11 @@ function App() {
       setCurrentSection(currentSectionId)
     }
 
-    // Navigation positioning checker - runs periodically to fix any positioning issues
-    const checkNavPosition = () => {
-      const navModalContent = document.getElementById('nav-modal-content')
-      if (navModalContent) {
-        const currentPos = window.scrollY + window.innerHeight / 2
-        let detectedSection = 'home'
-        
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop
-          const sectionHeight = section.offsetHeight
-          
-          if (currentPos >= sectionTop && currentPos < sectionTop + sectionHeight) {
-            detectedSection = section.id
-          }
-        })
-        
-        // Check if nav positioning matches detected section
-        const isHome = detectedSection === 'home'
-        const shouldBeCentered = isHome
-        const isCentered = navModalContent.classList.contains('nav-centered')
-        
-        // Fix positioning if it's incorrect
-        if (shouldBeCentered && !isCentered) {
-          navModalContent.classList.remove('nav-top')
-          navModalContent.classList.add('nav-centered')
-          setCurrentSection('home')
-        } else if (!shouldBeCentered && isCentered) {
-          navModalContent.classList.remove('nav-centered')
-          navModalContent.classList.add('nav-top')
-          setCurrentSection(detectedSection)
-        }
-      }
-    }
-
     // Call on initial load
     handleInitialSection()
 
-    // Set up periodic checker (every 2 seconds)
-    const positionChecker = setInterval(checkNavPosition, 2000)
-
     return () => {
       sections.forEach((section) => observer.unobserve(section))
-      clearInterval(positionChecker)
     }
   }, [])
 
