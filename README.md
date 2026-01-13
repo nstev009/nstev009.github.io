@@ -119,7 +119,8 @@ portfolio/
 
 - **Name**: Noah Stevens
 - **Program**: Software Engineering, University of Ottawa
-- **Status**: Looking for Fall 2025 Co-op opportunities
+- **Email**: stevenscnoah@gmail.com
+- **Status**: Looking for Spring - Summer 2026 Co-op opportunities
 
 ## License
 
