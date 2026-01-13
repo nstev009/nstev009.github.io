@@ -31,12 +31,9 @@ const AboutSection = () => {
       </div>
 
       <div className="about-content">
-        I'm a 2nd year Software Engineering student at the University of Ottawa.
-        
-        This portfolio is a project I'll be continuously working on
-        as part of my work load this semester.
+        I'm a 3rd year Software Engineering student at the University of Ottawa.
 
-        Currently, I'm looking for my next Co-op for Fall 2025.
+        I am currently searching for a Co-op for the Spring - Summer 2026. Any inquires, please feel free to contact me at stevenscnoah@gmail.com. 
       </div>
 
       <div className="me">
@@ -58,7 +55,7 @@ const AboutSection = () => {
               &times;
             </button>
             <iframe
-              src="/images/NoahStevens_Resume.pdf"
+              src="/images/Noah_Stevens_Resume_1p.pdf"
               title="Resume"
             />
           </div>
